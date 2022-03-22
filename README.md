@@ -11,7 +11,7 @@
 `train.py`:进行模型的训练。和最好模型的保存。  
 `test.py`:对测试集句子的测试输出。  
 `bleu_score.py`:对机器翻译评分。  
-`one_trans.py`:实现单个句子进行翻译。  
+`infer.py`:实现单个句子进行翻译。  
 `app.py`:通过使用infer.py封装的单个句子翻译的方法，实现flask api  
 
 
