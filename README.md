@@ -1,4 +1,4 @@
-# EN2CHN_Transformer
+# Translator_transformer
 
 ## 简介
 一个使用`Pytorch` 构建的 `Transformer 架构` 英译中翻译程序 <br>
