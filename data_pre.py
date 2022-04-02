@@ -5,9 +5,8 @@ import numpy as np
 from nltk import word_tokenize
 from torch.autograd import Variable
 
-from model import subsequent_mask
 from settings import *
-from utils import seq_padding
+from utils import seq_padding,subsequent_mask
 
 
 class PrepareData:
@@ -141,8 +140,8 @@ class Batch:
         src = torch.from_numpy(src).to(DEVICE).long()
         trg = torch.from_numpy(trg).to(DEVICE).long()
         self.src = src
-        # 对于当前输入的句子非空部分进行判断成bool序列
-        # 并在seq length前面增加一维，形成维度为 batch_size×1×seq length 的矩阵
+        # 对于当前输入的句子非空部分进行判断,变成bool序列
+        # 并在seq_len前面增加一维，形成维度为 batch_size×1×seq_len 的矩阵
         # src_mask值为0的位置是False
         self.src_mask = (src != pad).unsqueeze(-2)
         # 如果输出目标不为空，则需要对decoder要使用到的target句子进行mask

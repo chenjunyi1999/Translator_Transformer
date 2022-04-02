@@ -5,9 +5,8 @@ from nltk import word_tokenize
 from torch.autograd import Variable
 
 from model import make_model
-from model import subsequent_mask
 from settings import *
-from utils import get_word_dict
+from utils import get_word_dict,subsequent_mask
 
 """
 单个句子输入，单个句子翻译输出

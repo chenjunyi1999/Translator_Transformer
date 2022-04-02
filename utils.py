@@ -5,12 +5,21 @@ from torch.autograd import Variable
 from settings import *
 
 
-# 损失函数 nn.KLDivLoss
-#  KL散度，又叫做相对熵，算的是两个分布之间的距离，越相似则越接近零。
+def subsequent_mask(size):
+    # 生成向后遮掩的掩码张量，参数size是掩码张量最后两个维度的大小，它最后两维形成一个方阵
+    attn_shape = (1, size, size)
+    # 然后使用np.ones方法向这个形状中添加1元素，形成上三角阵
+    mask = np.triu(np.ones(attn_shape), k=1).astype('uint8')
+    # 返回一个右上角(不含主对角线)为全False，左下角(含主对角线)为全True的subsequent_mask矩阵
+    return torch.from_numpy(mask) == 0
+
+
+# 标签平滑创建了一个分布，该分布设定目标分布为1-smoothing，将剩余概率分配给词表中的其他单词
 # 在训练过程中，使用的平滑指数为0.1
 class LabelSmoothing(nn.Module):
     def __init__(self, size, padding_idx, smoothing=0.0):
         super(LabelSmoothing, self).__init__()
+        # 损失函数 nn.KLDivLoss / KL散度，又叫做相对熵，算的是两个分布之间的距离，越相似则越接近零。
         self.criterion = nn.KLDivLoss(reduction='sum')
         self.padding_idx = padding_idx
         self.confidence = 1.0 - smoothing
@@ -22,9 +31,9 @@ class LabelSmoothing(nn.Module):
         assert x.size(1) == self.size
         # 如果我们想要修改tensor的数值，但是又不希望被autograd记录，那么我么可以对tensor.data进行操作
         true_dist = x.data.clone()
-        # [个人理解！] 减去UNK 和target的idx 之后取均匀分布
+        # [个人理解！] 减去UNK 和target的idx 之后取均匀分布 smoothing/(n-2)
         true_dist.fill_(self.smoothing / (self.size - 2))
-        # 将target的idx在one-hot中位置改成大小为confidence 0.9
+        # 将target的idx在one-hot中位置改成大小为confidence 0.9 (1-smoothing)
         true_dist.scatter_(1, target.data.unsqueeze(1), self.confidence)
         # 将UNK这一列置0
         true_dist[:, self.padding_idx] = 0

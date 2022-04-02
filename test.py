@@ -1,8 +1,7 @@
 import numpy as np
 from torch.autograd import Variable
 
-from model import subsequent_mask
-from utils import bleu_candidate
+from utils import bleu_candidate,subsequent_mask
 
 
 def greedy_decode(model, src, src_mask, max_len, start_symbol):
