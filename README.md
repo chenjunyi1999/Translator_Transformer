@@ -32,6 +32,7 @@ nltk.download('punkt')
 python train.py
 ```
  训练好的模型会存在 ./save 文件夹下
+ 
 3. **模型交互**
 
 ```
