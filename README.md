@@ -18,7 +18,7 @@
 ## 如何使用
 0. **项目笔记**
 
-如果有任何疑问🤔️可以参考项目笔记 🤖️[项目笔记传送门](https://github.com/chenjunyi1999/ML-Tutorial/tree/main/EN2CN%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0)
+如果有任何疑问🤔️可以参考项目笔记 🤖️[项目笔记传送门](https://github.com/chenjunyi1999/ML-Tutorial/tree/main/Code_Notes/Translator-transformer)
  
 1. **下载nltk依赖**
 
