@@ -16,9 +16,6 @@
 
 
 ## 如何使用
-0. **项目笔记**
-
-如果有任何疑问🤔️可以参考项目笔记 🤖️[项目笔记传送门](https://github.com/chenjunyi1999/ML-Tutorial/tree/main/Code_Notes/Translator-transformer)
  
 1. **下载nltk依赖**
 
@@ -36,7 +33,7 @@ python train.py
 3. **模型交互**
 
 ```
-!python infer.py --sentence="I love you" 
+python infer.py --sentence="I love you" 
 ```
 4. **Flask API**
 
@@ -76,12 +73,9 @@ BLEU算法评价结果：
           0.03417978514554449,n-gram权重：(1,0.2,0,0)
 
 ## 参考文献
-1. [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf)
-
-2. [HarvardNLP "The Annotated Transformer"](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
-
-3. [Transformer 代码完全解读](https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/120540057)
-
-4. [Attention专场](https://blog.csdn.net/u012759262/article/details/103999959)
-
-5. [taoztw/Transformer](https://github.com/taoztw/Transformer)
+1. [Translator_transformer笔记心得](https://github.com/chenjunyi1999/ML-Tutorial/tree/main/Code_Notes/Translator-transformer)
+2. [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf)
+3. [HarvardNLP "The Annotated Transformer"](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
+4. [Transformer 代码完全解读](https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/120540057)
+5. [Attention专场](https://blog.csdn.net/u012759262/article/details/103999959)
+6. [taoztw/Transformer](https://github.com/taoztw/Transformer)
