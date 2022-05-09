@@ -73,7 +73,7 @@ BLEU算法评价结果：
           0.03417978514554449,n-gram权重：(1,0.2,0,0)
 
 ## 参考文献
-1. [Translator_transformer笔记心得](https://github.com/chenjunyi1999/ML-Tutorial/tree/main/Code_Notes/Translator-transformer)
+1. [Translator_transformer总结](https://github.com/chenjunyi1999/ML-Tutorial/tree/main/Code_Notes/Translator-transformer)
 2. [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf)
 3. [HarvardNLP "The Annotated Transformer"](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 4. [Transformer 代码完全解读](https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/120540057)
